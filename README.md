@@ -1,4 +1,4 @@
 #Collection of Katas solved on codewars.com
 
 
-![screenshot](images/CodeWarsAlex1100.png)
+![screenshot](images/Alex1100CodeWars.png)
