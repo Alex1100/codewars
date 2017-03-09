@@ -12,5 +12,5 @@ def combine(*args)
     result = objects
   end
   
-  if result.last.nil? && result.first.nil? then return {} else return result.last end
+  return result.last.nil? && result.first.nil? ? {} : result.last
 end
