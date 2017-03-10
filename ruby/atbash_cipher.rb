@@ -1,3 +1,17 @@
+#All Languages
+class AtbashCipher
+  def initialize(abc)
+    @abc = abc
+  end
+  def encode(str)
+    str.tr @abc, @abc.reverse
+  end
+  alias_method :decode, :encode
+end
+
+
+#My Implementation which passed tests
+#for latin alphabet
 abc = "abcdefghijklmnopqrstuvwxyz"
 
 class AtbashCipher
