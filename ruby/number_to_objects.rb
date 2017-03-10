@@ -1,3 +1,5 @@
+s = [118,117,120]
+
 def num_obj(s)
   temp = []
   s.each do |z|
