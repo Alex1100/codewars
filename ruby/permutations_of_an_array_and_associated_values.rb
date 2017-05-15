@@ -36,11 +36,8 @@
 def ssc_forperm(arr)
   all_permutations = arr.permutation.to_a.uniq
   total_perm = all_permutations.length
-  total_ssc = 0
-  max_ssc = 0
-  min_ssc = 0
-  temp = []
-  inner_temp = []
+  total_ssc, max_ssc, min_ssc = 0
+  temp, inner_temp = [], []
 
   all_permutations.each_with_index do |perm, i|
   inner_temp = []
