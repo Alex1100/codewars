@@ -27,14 +27,23 @@ BinarySearchTree.prototype.findInOrderSuccessor = function(inputNode) {
   if(inputNode.right){
     if(inputNode.right.left && !inputNode.right.left.left){
       return inputNode.right.left;
-    } else {
+    } else if(inputNode.right.left && inputNode.right.left.left) {
       result = inputNode.right.left;
       while(result.left){
         result = result.left;
       }
     }
   } else {
-    return inputNode.parent;
+    var rootInputNode = inputNode;
+    var targetInputNode = inputNode.parent;
+    while(targetInputNode.key <= rootInputNode.key){
+      if(targetInputNode.parent){
+        targetInputNode = targetInputNode.parent;
+      } else {
+        return;
+      }
+    }
+    return targetInputNode
   }
     return result;
 };
@@ -114,7 +123,7 @@ bst.insert(11);
 bst.insert(14);
 
 // Get a reference to the node whose key is 9
-var test = bst.getNodeByKey(9);
+var test = bst.getNodeByKey(25);
 
 // Find the in order successor of test
 var succ = test ? bst.findInOrderSuccessor(test) : null;
